@@ -14,7 +14,7 @@ export class ElementBuilder {
   }
 
   pluralizedText (content, array) {
-    return this.text(array.length > 1 ? content + 's' : content)
+    return this.text(array.length > 1 ? `${content}s` : content)
   }
 
   text (content) {

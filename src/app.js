@@ -1,10 +1,10 @@
+import path from 'node:path'
 import colors from 'colors'
 import express from 'express'
 import morgan from 'morgan'
-import path from 'path'
 
-import moviesRoute from './routes/movies-route.js'
 import genresRoute from './routes/genres-route.js'
+import moviesRoute from './routes/movies-route.js'
 
 const PORT = 3000
 

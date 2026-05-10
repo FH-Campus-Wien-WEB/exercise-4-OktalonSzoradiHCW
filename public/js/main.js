@@ -150,9 +150,9 @@ function createMovieCard (movie) {
 }
 
 function resetGenreButtonClassLists () {
-  ;[...document.querySelectorAll('.genre__button--active')].forEach(
-    g => (g.classList = 'genre__button')
-  )
+  ;[...document.querySelectorAll('.genre__button--active')].forEach(g => {
+    g.classList = 'genre__button'
+  })
 }
 
 function makeGenre (genre) {

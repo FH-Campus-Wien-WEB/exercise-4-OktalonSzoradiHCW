@@ -2,22 +2,52 @@
   "name": "web-26-exercise-4",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server/server.js",
-    "start-nodemon": "nodemon server/server.js"
-  },
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "Oktalon Szórádi",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npm run start-nodemon",
+    "start": "node ./src/app.js",
+    "start-nodemon": "nodemon ./src/app.js"
+  },
   "dependencies": {
-    "bcrypt": "^5.1.0",
-    "body-parser": "^1.20.2",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3"
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.2",
+    "colors": "^1.4.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.19.0",
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "@babel/eslint-parser": "^7.28.6",
+    "@biomejs/biome": "2.4.15",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "htmlhint": "^1.9.2",
+    "nodemon": "^3.1.14",
+    "standard": "^17.1.2",
+    "stylelint": "^17.11.0",
+    "stylelint-config-concentric-order": "^5.5.0",
+    "stylelint-config-recommended": "^18.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-two-dash-bem": "^1.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^3.0.0",
+    "stylelint-high-performance-animation": "^2.0.0",
+    "stylelint-media-use-custom-media": "^4.1.0",
+    "stylelint-no-browser-hacks": "^2.0.3",
+    "stylelint-no-unresolved-module": "^2.5.2",
+    "stylelint-no-unsupported-browser-features": "^8.1.1",
+    "stylelint-plugin-defensive-css": "^2.9.1",
+    "stylelint-plugin-logical-css": "^2.1.0",
+    "stylelint-plugin-use-baseline": "^1.4.1",
+    "stylelint-use-nesting": "^6.0.2",
+    "stylelint-value-no-unknown-custom-properties": "^6.1.1"
+  },
+  "standard": {
+    "disabled.parser": "@babel/eslint-parser"
   }
 }

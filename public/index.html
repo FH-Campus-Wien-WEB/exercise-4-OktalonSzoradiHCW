@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies!</title>
+    <link rel="stylesheet" href="css/base-style.css">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="css/responsive.style.css">
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Movies</h1>
+      <!-- <p class="subtitle">Have a look at this collection of movies.</p> -->
+    </header>
+    <!-- Filtering should not be in a nav? -->
+    <nav>
+      <h2>Filter</h2>
+      <p>Genre:</p>
+      <!-- These could probably be radio buttons instead -->
+      <ul class="genres" id="genres">
+        <!-- <li><button class="genre__button" type="button">All</button></li> -->
+        <!-- <li><button class="genre__button" type="button">Animation</button></li>
+        <li><button class="genre__button" type="button">Adventure</button></li>
+        <li><button class="genre__button" type="button">Comedy</button></li>
+        <li><button class="genre__button" type="button">Family</button></li>
+        <li><button class="genre__button" type="button">Mystery</button></li>
+        <li><button class="genre__button" type="button">Sci‑Fi</button></li> -->
+      </ul>
+    </nav>
+    <main id="app">
+      <ul class="movies" id="movies">
+        <li>
+          <section id="server-error">
+            <h2>Well, this is embarrasing…</h2>
+            <p>The movies could not be loaded. Is the server running?</p>
+            <p>Try refreshing the page.</p>
+          </section>
+        </li>
+        <!-- <li class="movies__li">
+          <article class="movie">
+            <picture class="movie__poster-area"
+              ><img
+                class="movie__poster"
+                src="https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_SX300.jpg"
+                alt="Movie poster for WALL·E"
+              ></picture
+            >
+            <h2 class="movie__title">WALL·E</h2>
+            <span class="movie__runtime-and-release"
+              >Runtime:&nbsp;98 minutes •&nbsp;Released:&nbsp;2008-06-27
+              •&nbsp;Metascore:&nbsp;95 •&nbsp;IMDb&nbsp;Rating:&nbsp;8.4</span
+            >
+            <ul class="movie__genres">
+              <li class="movie__genre">Animation</li>
+              <li class="movie__genre">Adventure</li>
+              <li class="movie__genre">Family</li>
+            </ul>
+            <p class="movie__description">
+              A robot who is responsible for cleaning a waste-covered Earth
+              meets another robot and falls in love with her. Together, they set
+              out on a journey that will alter the fate of mankind.
+            </p>
+            <h3>Director</h3>
+            <ul class="movie__directors">
+              <li class="movie__director">Andrew Stanton</li>
+            </ul>
+            <h3>Writers</h3>
+            <ul class="movie__writers">
+              <li class="movie__writer">Andrew Stanton</li>
+              <li class="movie__writer">Jim Reardon</li>
+              <li class="movie__writer">Pete Docter</li>
+            </ul>
+            <h3>Actors</h3>
+            <ul class="movie__actors">
+              <li class="movie__actor">Ben Burtt</li>
+              <li class="movie__actor">Elissa Knight</li>
+              <li class="movie__actor">Jeff Garlin</li>
+            </ul>
+            <footer class="movie__button-area">
+              <a class="movie__button" href="/edit.html?imdbID=tt0910970"
+                >Edit</a
+              >
+            </footer>
+          </article>
+        </li> -->
+      </ul>
+    </main>
+    <footer>
+      <p>
+        <span>Movies</span>
+        •
+        <a
+          href="https://github.com/FH-Campus-Wien-WEB/exercise-3-OktalonSzoradiHCW"
+          target="_blank"
+          >Exercise 3</a
+        >
+        •
+        <a
+          href="https://moodle.hcw.ac.at/course/view.php?id=44665"
+          target="_blank"
+          >Web Technologies (Summer Semester, 2026)</a
+        >
+      </p>
+      <p>
+        <a href="https://oktalon-szoradi.github.io/" target="_blank"
+          >Oktalon Szórádi (he/him)</a
+        >
+        •
+        <code>c2510475056</code>
+      </p>
+      <p>
+        <a
+          href="https://www.hcw.ac.at/en/studies/study-courses/computer-science-and-digital-communications-full-time"
+          target="_blank"
+          >Bachelor's Degree Program: Computer Science and Digital
+          Communications (full-time)</a
+        >
+      </p>
+      <p>
+        <a href="https://www.hcw.ac.at/en/" target="_blank"
+          >UAC Campus Vienna</a
+        >
+      </p>
+    </footer>
+    <script src="/js/main.js" type="module"></script>
+  </body>
+</html>

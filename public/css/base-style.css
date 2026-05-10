@@ -1,0 +1,17 @@
+/* stylelint-disable-next-line defensive-css/require-pure-selectors */
+body {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav content"
+    "footer footer";
+  grid-template-columns:
+    [full-start] 160px
+    [content-start] 1fr
+    [full-end];
+  gap: 1rem;
+  margin: 0;
+  background-color: hsl(0deg 0% 95%);
+  color: hsl(0deg 0% 15%);
+  font-family: sans-serif;
+}

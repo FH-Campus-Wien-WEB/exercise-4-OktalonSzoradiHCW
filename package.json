@@ -46,8 +46,5 @@
     "stylelint-plugin-use-baseline": "^1.4.1",
     "stylelint-use-nesting": "^6.0.2",
     "stylelint-value-no-unknown-custom-properties": "^6.1.1"
-  },
-  "standard": {
-    "disabled.parser": "@babel/eslint-parser"
   }
 }

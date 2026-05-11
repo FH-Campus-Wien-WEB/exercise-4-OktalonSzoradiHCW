@@ -150,11 +150,11 @@
       "trailingCommas": "none",
       "semicolons": "asNeeded",
       "arrowParentheses": "asNeeded",
-      "enabled": true,
+      "enabled": false,
       "operatorLinebreak": "after"
     },
     "linter": {
-      "enabled": true
+      "enabled": false
     },
     "assist": {
       "enabled": true

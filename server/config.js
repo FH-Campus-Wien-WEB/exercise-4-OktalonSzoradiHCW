@@ -1,6 +1,6 @@
 // Load .env file into process.env
 require('dotenv').config({
-  path: require('path').join(__dirname, '..', '.env')
+  path: require('node:path').join(__dirname, '..', '.env')
 })
 
 // Load configuration from environment variables

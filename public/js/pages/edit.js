@@ -1,5 +1,5 @@
 /* eslint-env browser */
-import { createHtmlElement } from './util.js'
+import { createHtmlElement } from '../util/dom.js'
 
 function setMovie (movie) {
   document.title = `Editing ${movie.title} – Movies!`

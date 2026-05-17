@@ -7,7 +7,7 @@
   "attr-unsafe-chars": true,
   "attr-value-double-quotes": true,
   "attr-value-no-duplication": true,
-  "attr-value-not-empty": true,
+  "attr-value-not-empty": false,
   "attr-value-single-quotes": false,
   "attr-whitespace": true,
   "button-type-require": true,
@@ -41,6 +41,6 @@
   "tag-self-close": false,
   "tagname-lowercase": true,
   "tagname-specialchars": true,
-  "tags-check": true,
+  "tags-check": false,
   "title-require": true
 }

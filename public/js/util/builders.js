@@ -70,10 +70,12 @@ export class ParentChildBuilder extends ElementBuilder {
 
   items (...args) {
     if (args.length === 1 && Array.isArray(args[0])) {
-      args[0].forEach(item => { this.append(item) })
+      for (const item of args[0]) {
+        this.append(item)
+      }
     } else {
-      for (let i = 0; i < args.length; i++) {
-        this.append(args[i])
+      for (const arg of args) {
+        this.appennd(arg)
       }
     }
 

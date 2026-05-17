@@ -5,8 +5,8 @@ import express from 'express'
 // import session from 'express-session'
 import morgan from 'morgan'
 
-import genresRoute from './routes/genres-route.js'
-import moviesRoute from './routes/movies-route.js'
+import genresRoute from './routes/genres.route.js'
+import moviesRoute from './routes/movies.route.js'
 
 dotenv.config()
 const PORT = process.env.PORT || 5000

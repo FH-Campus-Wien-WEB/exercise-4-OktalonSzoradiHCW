@@ -3,7 +3,7 @@ import { createHtmlElement } from '../util/dom.js'
 
 function setMovie (movie) {
   document.title = `Editing ${movie.title} – Movies!`
-  document.querySelector('h1.title').innerText = `Editing ${movie.title}`
+  document.querySelector('h1.title').textContent = `Editing ${movie.title}`
   // document.querySelector('#movie').innerText = JSON.stringify(movie)
 
   for (const element of document.forms[0].elements) {

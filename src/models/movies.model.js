@@ -1,6 +1,6 @@
 // import movies from '../movies.json' with { type: 'json' }
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 const filePath = path.resolve('./src/movies.json')
 const rawMovies = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
@@ -22,7 +22,7 @@ const formattedMovies = rawMovies.map(
     imdbID,
     title: Title,
     released: dateToISO8601format(Released),
-    runtime: Number.parseInt(Runtime),
+    runtime: Number.parseInt(Runtime, 10),
     genres: Genre.split(', ').map(g => g.replace(/-/g, '\u2011')),
     directors: Director.split(', '),
     writers: Writer.split(', '),
@@ -37,7 +37,7 @@ const formattedMovies = rawMovies.map(
 function dateToISO8601format (input) {
   const date = input instanceof Date ? input : new Date(input)
 
-  if (isNaN(date.getTime())) {
+  if (Number.isNaN(date.getTime())) {
     throw new Error('Invalid date')
   }
 
@@ -84,7 +84,9 @@ export async function editMovieJson (
   )
   const movie = { ...formattedMovies[movieIndex] }
 
-  if (!movie) return movie
+  if (!movie) {
+    return movie
+  }
 
   const whatWasChanged = []
 

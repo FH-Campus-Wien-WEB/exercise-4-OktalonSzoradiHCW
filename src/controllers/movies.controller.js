@@ -1,11 +1,13 @@
 import colors from 'colors'
-import * as model from '../models/movies-model.js'
+import * as model from '../models/movies.model.js'
 
 export async function getMovies (req, res) {
   const { genre } = req.query
 
   let filter = 'all'
-  if (genre) filter = genre
+  if (genre) {
+    filter = genre
+  }
 
   const movies = await model.getMoviesJson(filter)
 

@@ -3,12 +3,16 @@
  *
  * @param {keyof HTMLElementTagNameMap} tag - The HTML tag name (e.g. 'div', 'p', 'img').
  * @param {string} [classList] - Optional CSS class(es) to assign.
- * @param {string} [innerText] - Optional text content (ignored if falsy).
+ * @param {string} [textContent] - Optional text content (ignored if falsy).
  * @returns {HTMLElementTagNameMap[keyof HTMLElementTagNameMap]} The created element.
  */
-export function createHtmlElement (tag, classList, innerText) {
+export function createHtmlElement (tag, classList, textContent) {
   const element = document.createElement(tag)
-  if (classList) element.className = classList
-  if (innerText) element.innerText = innerText
+  if (classList) {
+    element.className = classList
+  }
+  if (textContent) {
+    element.textContent = textContent
+  }
   return element
 }

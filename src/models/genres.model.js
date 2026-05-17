@@ -1,4 +1,4 @@
-import * as moviesModel from '../models/movies-model.js'
+import * as moviesModel from './movies.model.js'
 
 let genres = []
 

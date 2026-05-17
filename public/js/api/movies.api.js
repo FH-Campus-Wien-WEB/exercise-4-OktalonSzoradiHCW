@@ -1,6 +1,10 @@
 /* eslint-env browser */
 
 /**
+ * @typedef {import('../types/movie.type.js').Movie} Movie
+ */
+
+/**
  * Fetches JSON data from a given URL using the Fetch API.
  * Throws the response object if the HTTP status is not OK (non-2xx).
  *
@@ -23,8 +27,6 @@ async function fetchJson (url) {
  * Fetches a list of movies from the API.
  * Optionally filters by genre.
  *
- * @typedef {import('../types/movie.type.js').Movie} Movie
- *
  * @param {string} [genre] - Optional genre to filter movies by
  * @returns {Promise<Movie[]>} Resolves with an array of movies
  */
@@ -32,14 +34,18 @@ export function fetchMovies (genre) {
   return fetchJson(genre ? `/movies?genre=${genre}` : '/movies')
 }
 
+/**
+ * Fetches a single movie by its IMDb ID.
+ *
+ * @param {string} imdbID - The IMDb ID of the movie (e.g. "tt0133093")
+ * @returns {Promise<Movie>} Resolves with the movie object
+ */
 export function fetchMovie (imdbID) {
   return fetchJson(`/movies/${imdbID}`)
 }
 
 /**
  * Updates a movie on the server.
- *
- * @typedef {import('../types/movie.type.js').Movie} Movie
  *
  * @param {string} imdbID
  * @param {Movie} movie

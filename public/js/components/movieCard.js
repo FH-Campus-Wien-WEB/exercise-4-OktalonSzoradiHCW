@@ -65,6 +65,8 @@ export function createMovieCard (movie) {
     'movie__actor'
   )
 
+  const styleDelayInMs = 1000
+
   const buttonArea = createHtmlElement('footer', 'movie__button-area')
   const buttonEdit = createHtmlElement('a', 'movie__button', 'Edit')
   buttonEdit.href = `/edit.html?imdbID=${movie.imdbID}`
@@ -72,7 +74,7 @@ export function createMovieCard (movie) {
     buttonEdit.classList.toggle('movie__button--active')
     setTimeout(() => {
       buttonEdit.classList.toggle('movie__button--active')
-    }, 1000)
+    }, styleDelayInMs)
   })
   buttonArea.appendChild(buttonEdit)
 

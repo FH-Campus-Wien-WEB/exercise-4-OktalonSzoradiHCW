@@ -1,7 +1,8 @@
-import colors from 'colors'
+import chalk from 'chalk'
+import { StatusCodes } from 'http-status-codes'
 import * as model from '../models/movies.model.js'
 
-export async function getMovies (req, res) {
+export function getMovies (req, res) {
   const { genre } = req.query
 
   let filter = 'all'
@@ -9,9 +10,9 @@ export async function getMovies (req, res) {
     filter = genre
   }
 
-  const movies = await model.getMoviesJson(filter)
+  const movies = model.getMoviesJson(filter)
 
-  return res.status(200).json(movies)
+  return res.status(StatusCodes.OK).json(movies)
 }
 
 export async function getMovie (req, res) {
@@ -20,10 +21,10 @@ export async function getMovie (req, res) {
   const movie = await model.getMovieJson(imdbID)
 
   if (!movie) {
-    res.status(404).json('Movie not found.')
+    res.status(StatusCodes.NOT_FOUND).json('Movie not found.')
   }
 
-  return res.status(200).json(movie)
+  return res.status(StatusCodes.OK).json(movie)
 }
 
 /* Task 3.1 and 3.2.
@@ -34,7 +35,7 @@ export async function editMovie (req, res) {
   const { imdbID } = req.params
 
   if (!req.body) {
-    res.status(400).json('No request body given.')
+    res.status(StatusCodes.BAD_REQUEST).json('No request body given.')
     return
   }
 
@@ -53,12 +54,12 @@ export async function editMovie (req, res) {
   } = req.body
 
   console.log(
-    colors.blue(
+    chalk.blue(
       `[ i ] controller.editMovie(): PUT /movies/${imdbID}\n` +
         '      Request Body:\n```\n'
     ),
     req.body,
-    colors.blue('\n```')
+    chalk.blue('\n```')
   )
 
   const editedMovie = await model.editMovieJson(imdbID, {
@@ -76,8 +77,8 @@ export async function editMovie (req, res) {
   })
 
   if (!editedMovie) {
-    res.status(404).json('Movie not found.')
+    res.status(StatusCodes.NOT_FOUND).json('Movie not found.')
   }
 
-  return res.status(200).json(editedMovie)
+  return res.status(StatusCodes.OK).json(editedMovie)
 }

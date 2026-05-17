@@ -32,6 +32,33 @@ export function fetchMovies (genre) {
   return fetchJson(genre ? `/movies?genre=${genre}` : '/movies')
 }
 
+export function fetchMovie (imdbID) {
+  return fetchJson(`/movies/${imdbID}`)
+}
+
+/**
+ * Updates a movie on the server.
+ *
+ * @typedef {import('../types/movie.type.js').Movie} Movie
+ *
+ * @param {string} imdbID
+ * @param {Movie} movie
+ * @returns {Promise<void>}
+ */
+export async function updateMovie (imdbID, movie) {
+  const response = await fetch(`/movies/${imdbID}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(movie)
+  })
+
+  if (!response.ok) {
+    throw response
+  }
+}
+
 /**
  * Fetches the list of available movie genres from the API.
  *

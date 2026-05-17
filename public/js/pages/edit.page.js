@@ -1,20 +1,44 @@
 /* eslint-env browser */
+import * as api from '../api/movies.api.js'
 import { createHtmlElement } from '../util/dom.js'
 
-function setMovie (movie) {
-  document.title = `Editing ${movie.title} – Movies!`
-  document.querySelector('h1.title').textContent = `Editing ${movie.title}`
-  // document.querySelector('#movie').innerText = JSON.stringify(movie)
+/* -------------------------
+   DOM REFERENCES
+-------------------------- */
 
-  for (const element of document.forms[0].elements) {
-    const name = element.name
+const $ = {
+  title: document.querySelector('h1.title'),
+  form: document.forms[0],
+  movieSection: document.querySelector('#movie'),
+  errorSection: document.querySelector('#server-error'),
+  saveButton: document.querySelector('#movie-form__button--save')
+}
+
+/* -------------------------
+   URL PARAM
+-------------------------- */
+
+const imdbID = new URLSearchParams(globalThis.location.search).get('imdbID')
+
+/* -------------------------
+   RENDER
+-------------------------- */
+
+function renderMovie (movie) {
+  document.title = `Editing ${movie.title} – Movies!`
+  $.title.textContent = `Editing ${movie.title}`
+
+  for (const element of $.form.elements) {
+    if (!element.name) {
+      continue
+    }
+
+    const { name } = element
     const value = movie[name]
 
     if (name === 'genres') {
-      const options = element.options
-      for (let index = 0; index < options.length; index++) {
-        const option = options[index]
-        option.selected = value.indexOf(option.value) >= 0
+      for (const option of element.options) {
+        option.selected = value.includes(option.value)
       }
     } else {
       element.value = value
@@ -22,123 +46,110 @@ function setMovie (movie) {
   }
 }
 
-function getMovie () {
-  const movie = {}
+function renderError (error) {
+  $.errorSection.classList = 'movies movies__error'
 
-  const elements = Array.from(document.forms[0].elements).filter(
-    element => element.name
+  const section = createHtmlElement('section')
+
+  section.append(
+    createHtmlElement(
+      'h2',
+      null,
+      `${error.status ?? 'Error'} • ${error.statusText ?? ''}`
+    ),
+    createHtmlElement('p', null, "Could not load this movie's data")
   )
 
-  for (const element of elements) {
-    const name = element.name
+  $.errorSection.append(section)
+}
 
-    let value
+/* -------------------------
+   FORM SERIALIZATION
+-------------------------- */
 
-    if (name === 'genres') {
-      value = []
-      const options = element.options
-      for (let index = 0; index < options.length; index++) {
-        const option = options[index]
-        if (option.selected) {
-          value.push(option.value)
-        }
-      }
-    } else if (
-      name === 'metascore' ||
-      name === 'runtime' ||
-      name === 'imdbRating'
-    ) {
-      value = Number(element.value)
-    } else if (
-      name === 'actors' ||
-      name === 'directors' ||
-      name === 'writers'
-    ) {
-      value = element.value
-        .split(',')
-        .map(item => item.trim())
-        .filter(item => Boolean(item))
-    } else {
-      value = element.value
+function getMovieFromForm () {
+  const movie = {}
+
+  for (const element of $.form.elements) {
+    if (!element.name) {
+      continue
     }
 
-    movie[name] = value
+    const { name, value } = element
+
+    let parsedValue
+
+    if (name === 'genres') {
+      parsedValue = Array.from(element.options)
+        .filter(o => o.selected)
+        .map(o => o.value)
+    } else if (['metascore', 'runtime', 'imdbRating'].includes(name)) {
+      parsedValue = Number(value)
+    } else if (['actors', 'directors', 'writers'].includes(name)) {
+      parsedValue = value
+        .split(',')
+        .map(v => v.trim())
+        .filter(Boolean)
+    } else {
+      parsedValue = value
+    }
+
+    movie[name] = parsedValue
   }
 
   return movie
 }
 
-function putMovie () {
-  /* Task 3.3.
-    - Get the movie data using getMovie()
-    - Configure the XMLHttpRequest to make a PUT to /movies/:imdbID
-    - Set the 'Content-Type' appropriately for JSON data
-    - Configure the function below as the onload event handler
-    - Send the movie data as JSON
-  */
-  console.log(getMovie())
-  const movie = getMovie()
+/* -------------------------
+   ACTIONS
+-------------------------- */
 
-  const xhr = new XMLHttpRequest()
-  xhr.open('PUT', `/movies/${imdbID}`)
-  xhr.setRequestHeader('Content-Type', 'application/json')
-  xhr.onload = () => {
-    if (xhr.status === 200 || xhr.status === 204) {
-      location.href = 'index.html'
-    } else {
-      alert(
-        `Saving of movie data failed. Status code was ${xhr.status}.` +
-          `\n\n${xhr.response}\n\n` +
-          'Check the browser console for more details.'
+async function loadMovie () {
+  const movie = await api.fetchMovie(imdbID)
+
+  $.errorSection.hidden = true
+  $.movieSection.hidden = false
+
+  renderMovie(movie)
+}
+
+async function saveMovie () {
+  const movie = getMovieFromForm()
+
+  await api.updateMovie(imdbID, movie)
+
+  location.href = '/'
+}
+
+/* -------------------------
+   EVENTS
+-------------------------- */
+
+function bindEvents () {
+  $.saveButton.addEventListener('click', async () => {
+    try {
+      await saveMovie()
+    } catch (err) {
+      console.error(
+        `Saving failed: ${err.status ?? ''} ${
+          err.statusText ?? ''
+        }\n\nCheck console for details.`
       )
-      console.error(`Could not PUT /movies/${imdbID}`, xhr)
+      console.error('PUT /movies failed', err)
     }
-  }
-  xhr.send(JSON.stringify(movie))
+  })
 }
 
-/** Loading and setting the movie data for the movie with the passed imdbID */
-const imdbID = new URLSearchParams(window.location.search).get('imdbID')
+/* -------------------------
+   INIT
+-------------------------- */
 
-const xhr = new XMLHttpRequest()
-xhr.open('GET', `/movies/${imdbID}`)
-xhr.onload = () => {
-  const serverErrorElement = document.querySelector('#server-error')
-  if (xhr.status === 200) {
-    const responseJSON = JSON.parse(xhr.responseText)
-    console.log(responseJSON)
-
-    serverErrorElement.hidden = true
-    document.querySelector('#movie').hidden = false
-    document
-      .querySelector('#movie-form__button--save')
-      .addEventListener('click', putMovie)
-
-    setMovie(responseJSON)
-  } else {
-    serverErrorElement.classList = 'movies movies__error'
-    const li = createHtmlElement('section')
-    li.append(
-      createHtmlElement('h2', null, `${xhr.status} • ${xhr.statusText}`),
-      createHtmlElement('p', null, "Could not load this movie's data")
-    )
-    serverErrorElement.append(li)
-    console.error("Could not load this movie's data", xhr)
+window.onload = async () => {
+  try {
+    bindEvents()
+    await loadMovie()
+  } catch (err) {
+    console.error('Load failed:', err)
+    renderError(err)
   }
 }
-
-xhr.send()
-
-// const form = document.querySelector('form')
-// let isDirty = false
-
-// form.addEventListener('input', () => {
-//   isDirty = true
-// })
-
-// window.addEventListener('beforeunload', e => {
-//   if (!isDirty) return
-
-//   e.preventDefault()
-//   e.returnValue = ''
-// })

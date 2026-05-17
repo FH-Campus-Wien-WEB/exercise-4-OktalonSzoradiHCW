@@ -23,7 +23,7 @@ const formattedMovies = rawMovies.map(
     title: Title,
     released: dateToISO8601format(Released),
     runtime: Number.parseInt(Runtime, 10),
-    genres: Genre.split(', ').map(g => g.replace(/-/g, '\u2011')),
+    genres: Genre.split(', ').map(g => g.replace(/-/gu, '\u2011')),
     directors: Director.split(', '),
     writers: Writer.split(', '),
     actors: Actors.split(', '),
@@ -48,7 +48,7 @@ function dateToISO8601format (input) {
   return `${year}-${month}-${day}`
 }
 
-export async function getMoviesJson (genre) {
+export function getMoviesJson (genre) {
   if (genre && genre.toLowerCase() !== 'all') {
     return formattedMovies.filter(movie => movie.genres.includes(genre))
   }
@@ -56,13 +56,13 @@ export async function getMoviesJson (genre) {
   return formattedMovies
 }
 
-export async function getMovieJson (imdbID) {
+export function getMovieJson (imdbID) {
   const movie = formattedMovies.find(m => m.imdbID === imdbID)
 
   return movie
 }
 
-export async function editMovieJson (
+export function editMovieJson (
   imdbID,
   // {
   //   Title,
@@ -80,7 +80,7 @@ export async function editMovieJson (
   newMovie
 ) {
   const movieIndex = formattedMovies.indexOf(
-    formattedMovies.find(movie => movie.imdbID === imdbID)
+    formattedMovies.find(m => m.imdbID === imdbID)
   )
   const movie = { ...formattedMovies[movieIndex] }
 

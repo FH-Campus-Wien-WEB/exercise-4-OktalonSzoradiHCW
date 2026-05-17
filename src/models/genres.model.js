@@ -2,10 +2,10 @@ import * as moviesModel from './movies.model.js'
 
 let genres = []
 
-export async function getGenresJson () {
+export function getGenresJson () {
   let collectedGenres = []
 
-  const movies = await moviesModel.getMoviesJson()
+  const movies = moviesModel.getMoviesJson()
 
   for (const movie of movies) {
     for (const genre of movie.genres) {

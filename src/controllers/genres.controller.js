@@ -1,7 +1,8 @@
+import { StatusCodes } from 'http-status-codes'
 import * as model from '../models/genres.model.js'
 
-export async function getGenres (_, res) {
-  const genres = await model.getGenresJson()
+export function getGenres (_, res) {
+  const genres = model.getGenresJson()
 
-  return res.status(200).json(genres)
+  return res.status(StatusCodes.OK).json(genres)
 }

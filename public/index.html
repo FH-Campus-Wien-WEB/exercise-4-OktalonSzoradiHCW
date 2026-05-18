@@ -12,16 +12,14 @@
   <body>
     <header>
       <h1 class="title">Movies</h1>
-      <p class="subtitle" id="status">Please log in to see your collection of movies.</p>
+      <p class="subtitle" id="status">
+        Please log in to see your collection of movies.
+      </p>
     </header>
     <!-- Filtering should not be in a nav? -->
     <nav>
       <h2 class="login-required" hidden>Filter</h2>
       <p class="login-required" hidden>Genre:</p>
-      <h2 class="guest">Manage</h2>
-      <button class="guest genre__button" id="authBtn" type="button">
-        Log In
-      </button>
       <!-- These could probably be radio buttons instead -->
       <ul class="genres" id="genres">
         <!-- <li><button class="genre__button" type="button">All</button></li> -->
@@ -32,6 +30,26 @@
         <li><button class="genre__button" type="button">Mystery</button></li>
         <li><button class="genre__button" type="button">Sci‑Fi</button></li> -->
       </ul>
+      <h2>Manage</h2>
+      <button class="guest genre__button" id="authBtn" type="button">
+        Log In
+      </button>
+      <button
+        class="login-required genre__button"
+        id="addMovies"
+        type="button"
+        hidden
+      >
+        Add Movies
+      </button>
+      <button
+        class="login-required genre__button"
+        id="logOut"
+        type="button"
+        hidden
+      >
+        Log Out
+      </button>
     </nav>
     <main id="app">
       <ul class="movies" id="movies">

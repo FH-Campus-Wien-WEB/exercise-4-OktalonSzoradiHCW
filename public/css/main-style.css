@@ -50,7 +50,10 @@ header {
   text-shadow:
     0 -1pt 1pt hsl(0deg 0% 100% / 66.6667%),
     0 1pt 1.5pt hsl(0deg 0% 100% / 50%),
-    0 0 2pt hsl(0deg 0% 100%);
+    0 0 1pt hsl(0deg 0% 100%),
+    0 0 2pt hsl(0deg 0% 100%),
+    0 0 3pt hsl(0deg 0% 100%),
+    0 0 4pt hsl(0deg 0% 100%);
 }
 
 .page-footer:not(.movie__button-area) {

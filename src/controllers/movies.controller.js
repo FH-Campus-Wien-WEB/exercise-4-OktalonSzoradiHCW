@@ -62,6 +62,7 @@ export async function editMovie (req, res) {
   )
 
   const editedMovie = await model.editMovieJson(username, imdbID, {
+    imdbID,
     title,
     released,
     runtime,

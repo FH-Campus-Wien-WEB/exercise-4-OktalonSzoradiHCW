@@ -15,6 +15,8 @@ const errorEl = document.querySelector('#server-error')
 const guestElements = document.querySelectorAll('.guest')
 const loginRequiredElements = document.querySelectorAll('.login-required')
 
+const logOutBtn = document.querySelector('#logOut')
+
 const status = document.querySelector('#status')
 
 /* -------------------------
@@ -90,6 +92,19 @@ async function loadMovies () {
    APP ENTRY
 -------------------------- */
 
+logOutBtn.onclick = () => {
+  currentSession = undefined
+  globalThis.location.reload(true)
+}
+
+async function loadPage () {
+  await Promise.all([loadGenres(), loadMovies()])
+
+  renderLoggedInElements()
+
+  status.textContent = `Hey there, ${currentSession.firstName} ${currentSession.lastName}! You logged in on ${currentSession.loginTime}`
+}
+
 function handleLogin () {
   const authBtn = document.querySelector('#authBtn')
   authBtn.onclick = () => {
@@ -113,11 +128,7 @@ function handleLogin () {
 
     currentSession = response
 
-    await Promise.all([loadGenres(), loadMovies()])
-
-    renderLoggedInElements()
-
-    status.textContent = `Hey there, ${currentSession.firstName} ${currentSession.lastName}! You logged in on ${currentSession.loginTime}`
+    await loadPage()
 
     document.querySelector('#loginDialog').close()
   })
@@ -125,6 +136,10 @@ function handleLogin () {
   document.querySelector('#cancelLogin').addEventListener('click', () => {
     document.querySelector('#loginDialog').close()
   })
+
+  if (currentSession) {
+    loadPage()
+  }
 }
 
 window.onload = () => {

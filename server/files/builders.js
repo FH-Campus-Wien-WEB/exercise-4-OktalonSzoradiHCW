@@ -50,6 +50,7 @@ export class ElementBuilder {
   }
 }
 
+// biome-ignore lint/style/useExportsLast: Lecturer
 export class ParentChildBuilder extends ElementBuilder {
   constructor (parentTag, childTag) {
     super(parentTag)
@@ -72,12 +73,12 @@ export class ParentChildBuilder extends ElementBuilder {
 
   items (...args) {
     if (args.length === 1 && Array.isArray(args[0])) {
-      args[0].forEach(item => {
+      for (const item of args[0]) {
         this.append(item)
-      })
+      }
     } else {
-      for (let i = 0; i < args.length; i++) {
-        this.append(args[i])
+      for (const arg of args) {
+        this.appennd(arg)
       }
     }
 
@@ -114,9 +115,9 @@ export class MovieBuilder extends ElementBuilder {
       this.append(
         new ElementBuilder('p')
           .append(
-            new ButtonBuilder('Edit').onclick(
-              () => (location.href = `edit.html?imdbID=${movie.imdbID}`)
-            )
+            new ButtonBuilder('Edit').onclick(() => {
+              location.href = `edit.html?imdbID=${movie.imdbID}`
+            })
           )
           .append(
             new ButtonBuilder('Delete').onclick(() => deleteMovie(movie.imdbID))

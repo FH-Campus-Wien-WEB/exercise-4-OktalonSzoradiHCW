@@ -1,306 +1,171 @@
-[
-  {
-    "Title": "WALL·E",
-    "Year": "2008",
-    "Rated": "G",
-    "Released": "27 Jun 2008",
-    "Runtime": "98 min",
-    "Genre": "Animation, Adventure, Family",
-    "Director": "Andrew Stanton",
-    "Writer": "Andrew Stanton, Jim Reardon, Pete Docter",
-    "Actors": "Ben Burtt, Elissa Knight, Jeff Garlin",
-    "Plot": "A robot who is responsible for cleaning a waste-covered Earth meets another robot and falls in love with her. Together, they set out on a journey that will alter the fate of mankind.",
-    "Language": "English",
-    "Country": "United States, Japan",
-    "Awards": "Won 1 Oscar. 96 wins & 95 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_SX300.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "8.4/10" },
-      { "Source": "Rotten Tomatoes", "Value": "95%" },
-      { "Source": "Metacritic", "Value": "95/100" }
-    ],
-    "Metascore": "95",
-    "imdbRating": "8.4",
-    "imdbVotes": "1,306,354",
-    "imdbID": "tt0910970",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$223,808,164",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
+{
+  "joe": {
+    "tt0399295": {
+      "imdbID": "tt0399295",
+      "title": "Lord of War",
+      "released": "2005-09-15",
+      "runtime": 122,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "directors": [
+        "Andrew Niccol"
+      ],
+      "writers": [
+        "Andrew Niccol"
+      ],
+      "actors": [
+        "Nicolas Cage",
+        "Ethan Hawke",
+        "Jared Leto"
+      ],
+      "plot": "An arms dealer confronts the morality of his work as he is being chased by an INTERPOL Agent.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNThlY2NkYmMtNTFhNi00MzBiLWJmNzEtZjk5MzYwYWU2MjllXkEyXkFqcGc@._V1_SX300.jpg",
+      "metascore": 62,
+      "imdbRating": 7.6
+    },
+    "tt0167260": {
+      "imdbID": "tt0167260",
+      "title": "The Lord of the Rings: The Return of the King",
+      "released": "2003-12-16",
+      "runtime": 201,
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "directors": [
+        "Peter Jackson"
+      ],
+      "writers": [
+        "J.R.R. Tolkien",
+        "Fran Walsh",
+        "Philippa Boyens"
+      ],
+      "actors": [
+        "Elijah Wood",
+        "Viggo Mortensen",
+        "Ian McKellen"
+      ],
+      "plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_SX300.jpg",
+      "metascore": 94,
+      "imdbRating": 9
+    },
+    "tt0057261": {
+      "imdbID": "tt0057261",
+      "title": "Lord of the Flies",
+      "released": "1963-08-12",
+      "runtime": 92,
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Thriller"
+      ],
+      "directors": [
+        "Peter Brook"
+      ],
+      "writers": [
+        "William Golding",
+        "Peter Brook"
+      ],
+      "actors": [
+        "James Aubrey",
+        "Tom Chapin",
+        "Hugh Edwards"
+      ],
+      "plot": "Schoolboys marooned on a Pacific island create their own savage civilization.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2RiOTM0ZDgtNDRlMi00MDMzLWI1NDYtY2NjZDM4YTkwNWVlXkEyXkFqcGc@._V1_SX300.jpg",
+      "metascore": 67,
+      "imdbRating": 6.9
+    }
   },
-  {
-    "Title": "The Super Mario Bros. Movie",
-    "Year": "2023",
-    "Rated": "PG",
-    "Released": "05 Apr 2023",
-    "Runtime": "92 min",
-    "Genre": "Animation, Adventure, Comedy",
-    "Director": "Aaron Horvath, Michael Jelenic, Pierre Leduc",
-    "Writer": "Matthew Fogel",
-    "Actors": "Chris Pratt, Anya Taylor-Joy, Charlie Day",
-    "Plot": "Brooklyn plumbers Mario and Luigi are warped to the magical Mushroom Kingdom, and Mario must team up with Princess Peach, Toad, and Donkey Kong to save Luigi from the evil Bowser.",
-    "Language": "English",
-    "Country": "Japan, United States",
-    "Awards": "2 wins & 49 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BOGZlN2EzOTYtMzUzOS00NTM3LTg0MTQtZDVjZGM4YmJlNWNhXkEyXkFqcGc@._V1_QL75_UY562_CR0,0,380,562_.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "7.0/10" },
-      { "Source": "Rotten Tomatoes", "Value": "59%" },
-      { "Source": "Metacritic", "Value": "46/100" }
-    ],
-    "Metascore": "46",
-    "imdbRating": "7.0",
-    "imdbVotes": "291,926",
-    "imdbID": "tt6718170",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$574,934,330",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "The Super Mario Galaxy Movie",
-    "Year": "2026",
-    "Rated": "PG",
-    "Released": "01 Apr 2026",
-    "Runtime": "98 min",
-    "Genre": "Animation, Adventure, Comedy",
-    "Director": "Aaron Horvath, Michael Jelenic, Pierre Leduc",
-    "Writer": "Matthew Fogel",
-    "Actors": "Brie Larson, Virginia Dare Jelenic, Benny Safdie",
-    "Plot": "Mario ventures into space, exploring cosmic worlds and tackling galactic challenges far from the familiar Mushroom Kingdom.",
-    "Language": "English",
-    "Country": "Japan, United States",
-    "Awards": "N/A",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMDg5MjRkNWEtYmU1Mi00MTExLTk5MDQtY2RiMWVkZWNiOThjXkEyXkFqcGc@._V1_QL75_UX380_CR0,20,380,562_.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "6.4/10" },
-      { "Source": "Metacritic", "Value": "37/100" }
-    ],
-    "Metascore": "37",
-    "imdbRating": "6.4",
-    "imdbVotes": "33,056",
-    "imdbID": "tt28650488",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$314,905,415",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "Backrooms",
-    "Year": "2026",
-    "Rated": "N/A",
-    "Released": "29 May 2026",
-    "Runtime": "105 min",
-    "Genre": "Horror, Sci-Fi",
-    "Director": "Kane Parsons",
-    "Writer": "Will Soodik, Kane Parsons",
-    "Actors": "Chiwetel Ejiofor, Renate Reinsve, Mark Duplass",
-    "Plot": "A strange doorway appears in the basement of a furniture showroom.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "N/A",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BYzQyYjZmMjctMzIyZi00MDI0LWJhNGQtMzQ3MTFlNDgwNGM5XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
-    "Ratings": [],
-    "Metascore": "N/A",
-    "imdbRating": "N/A",
-    "imdbVotes": "N/A",
-    "imdbID": "tt26657236",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "N/A",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "Up",
-    "Year": "2009",
-    "Rated": "PG",
-    "Released": "29 May 2009",
-    "Runtime": "96 min",
-    "Genre": "Animation, Adventure, Comedy",
-    "Director": "Pete Docter, Bob Peterson",
-    "Writer": "Bob Peterson, Pete Docter, Tom McCarthy",
-    "Actors": "Edward Asner, Jordan Nagai, John Ratzenberger",
-    "Plot": "78-year-old Carl Fredricksen travels to South America in his house equipped with balloons, inadvertently taking a young stowaway.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "Won 2 Oscars. 81 wins & 88 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BNmI1ZTc5MWMtMDYyOS00ZDc2LTkzOTAtNjQ4NWIxNjYyNDgzXkEyXkFqcGc@._V1_SX300.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "8.3/10" },
-      { "Source": "Rotten Tomatoes", "Value": "98%" },
-      { "Source": "Metacritic", "Value": "88/100" }
-    ],
-    "Metascore": "88",
-    "imdbRating": "8.3",
-    "imdbVotes": "1,225,827",
-    "imdbID": "tt1049413",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$293,004,164",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "The SpongeBob SquarePants Movie",
-    "Year": "2004",
-    "Rated": "PG",
-    "Released": "19 Nov 2004",
-    "Runtime": "87 min",
-    "Genre": "Animation, Adventure, Comedy",
-    "Director": "Stephen Hillenburg, Mark Osborne",
-    "Writer": "Derek Drymon, Tim Hill, Stephen Hillenburg",
-    "Actors": "Tom Kenny, Jeffrey Tambor, Rodger Bumpass",
-    "Plot": "SpongeBob takes leave from Bikini Bottom in order to track down, with Patrick, King Neptune's stolen crown.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "1 win & 10 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BZTRhZDUzMjktOTJhMC00YjNlLTk5YjAtNTdiYTVmMzc1YTQ1XkEyXkFqcGc@._V1_SX300.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "7.2/10" },
-      { "Source": "Rotten Tomatoes", "Value": "68%" },
-      { "Source": "Metacritic", "Value": "67/100" }
-    ],
-    "Metascore": "67",
-    "imdbRating": "7.2",
-    "imdbVotes": "110,156",
-    "imdbID": "tt0345950",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$85,417,988",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "The Lego Movie",
-    "Year": "2014",
-    "Rated": "PG",
-    "Released": "07 Feb 2014",
-    "Runtime": "100 min",
-    "Genre": "Animation, Action, Adventure",
-    "Director": "Phil Lord, Christopher Miller",
-    "Writer": "Phil Lord, Christopher Miller, Dan Hageman",
-    "Actors": "Chris Pratt, Will Ferrell, Elizabeth Banks",
-    "Plot": "An ordinary LEGO construction worker, thought to be the prophesied as \"special\", is recruited to join a quest to stop an evil tyrant from gluing the LEGO universe into eternal stasis.",
-    "Language": "English",
-    "Country": "United States, Denmark, Australia, Norway",
-    "Awards": "Nominated for 1 Oscar. 72 wins & 67 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "7.7/10" },
-      { "Source": "Rotten Tomatoes", "Value": "96%" },
-      { "Source": "Metacritic", "Value": "83/100" }
-    ],
-    "Metascore": "83",
-    "imdbRating": "7.7",
-    "imdbVotes": "411,857",
-    "imdbID": "tt1490017",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$257,966,122",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "The Giver",
-    "Year": "2014",
-    "Rated": "PG-13",
-    "Released": "15 Aug 2014",
-    "Runtime": "97 min",
-    "Genre": "Drama, Romance, Sci-Fi",
-    "Director": "Phillip Noyce",
-    "Writer": "Michael Mitnick, Robert B. Weide, Lois Lowry",
-    "Actors": "Brenton Thwaites, Jeff Bridges, Meryl Streep",
-    "Plot": "In a seemingly perfect community without war, pain, suffering, differences, or choices, a young boy is chosen to learn from an elderly man, the true pain and pleasure of the real world.",
-    "Language": "English",
-    "Country": "Canada, South Africa, United States",
-    "Awards": "3 wins & 6 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMTY1MTIxMjg2Ml5BMl5BanBnXkFtZTgwMjUyNzgwMjE@._V1_SX300.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "6.4/10" },
-      { "Source": "Rotten Tomatoes", "Value": "34%" },
-      { "Source": "Metacritic", "Value": "47/100" }
-    ],
-    "Metascore": "47",
-    "imdbRating": "6.4",
-    "imdbVotes": "129,938",
-    "imdbID": "tt0435651",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$45,090,374",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "Fahrenheit 451",
-    "Year": "2018",
-    "Rated": "TV-14",
-    "Released": "20 May 2018",
-    "Runtime": "100 min",
-    "Genre": "Drama, Sci-Fi, Thriller",
-    "Director": "Ramin Bahrani",
-    "Writer": "Ray Bradbury, Ramin Bahrani, Amir Naderi",
-    "Actors": "Michael B. Jordan, Aaron Davis, Cindy Katz",
-    "Plot": "In a terrifying care-free future, a young man, Guy Montag, whose job as a fireman is to burn all books, questions his actions after meeting a young woman - and begins to rebel against society.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "Nominated for 5 Primetime Emmys. 3 wins & 15 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BYmY0YWQ1NjktYzkyOS00MTVhLTljZGUtZTc3MTE0ZTQyZjk2XkEyXkFqcGc@._V1_SX300.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "5.0/10" },
-      { "Source": "Rotten Tomatoes", "Value": "31%" }
-    ],
-    "Metascore": "N/A",
-    "imdbRating": "5.0",
-    "imdbVotes": "25,709",
-    "imdbID": "tt0360556",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "N/A",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-  },
-  {
-    "Title": "Charlie and the Chocolate Factory",
-    "Year": "2005",
-    "Rated": "PG",
-    "Released": "15 Jul 2005",
-    "Runtime": "115 min",
-    "Genre": "Adventure, Comedy, Family",
-    "Director": "Tim Burton",
-    "Writer": "Roald Dahl, John August",
-    "Actors": "Johnny Depp, Freddie Highmore, David Kelly",
-    "Plot": "Charlie, a young boy from an impoverished family, and four other kids win a tour of an amazing chocolate factory run by an imaginative chocolatier, Willy Wonka, and his staff of Oompa-Loompas.",
-    "Language": "English",
-    "Country": "United Kingdom, United States",
-    "Awards": "Nominated for 1 Oscar. 15 wins & 52 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BNjcxMjg1Njg2NF5BMl5BanBnXkFtZTcwMjQ4NzMzMw@@._V1_SX300.jpg",
-    "Ratings": [
-      { "Source": "Internet Movie Database", "Value": "6.7/10" },
-      { "Source": "Rotten Tomatoes", "Value": "83%" },
-      { "Source": "Metacritic", "Value": "72/100" }
-    ],
-    "Metascore": "72",
-    "imdbRating": "6.7",
-    "imdbVotes": "566,515",
-    "imdbID": "tt0367594",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$206,459,076",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
+  "jane": {
+    "tt1972591": {
+      "imdbID": "tt1972591",
+      "title": "King Arthur: Legend of the Sword",
+      "released": "2017-05-11",
+      "runtime": 126,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "directors": [
+        "Guy Ritchie"
+      ],
+      "writers": [
+        "Joby Harold",
+        "Guy Ritchie",
+        "Lionel Wigram"
+      ],
+      "actors": [
+        "Charlie Hunnam",
+        "Astrid Bergès-Frisbey",
+        "Jude Law"
+      ],
+      "plot": "Robbed of his birthright, Arthur comes up the hard way in the back alleys of the city. But once he pulls the sword from the stone, he is forced to acknowledge his true legacy - whether he likes it or not.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjM3ODY3Njc5Ml5BMl5BanBnXkFtZTgwMjQ5NjM5MTI@._V1_SX300.jpg",
+      "metascore": 41,
+      "imdbRating": 6.7
+    },
+    "tt0360717": {
+      "imdbID": "tt0360717",
+      "title": "King Kong",
+      "released": "2005-12-13",
+      "runtime": 187,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Romance"
+      ],
+      "directors": [
+        "Peter Jackson"
+      ],
+      "writers": [
+        "Fran Walsh",
+        "Philippa Boyens",
+        "Peter Jackson"
+      ],
+      "actors": [
+        "Naomi Watts",
+        "Jack Black",
+        "Adrien Brody"
+      ],
+      "plot": "A greedy film producer assembles a team of moviemakers and sets out for the infamous Skull Island, where they find more than just cannibalistic natives.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWY0NWE0ZjUtNjRlOS00ZDViLTgxNTQtMGMwN2FhNDY1YTg2XkEyXkFqcGc@._V1_SX300.jpg",
+      "metascore": 81,
+      "imdbRating": 7.2
+    },
+    "tt0110357": {
+      "imdbID": "tt0110357",
+      "title": "The Lion King",
+      "released": "1994-06-23",
+      "runtime": 88,
+      "genres": [
+        "Animation",
+        "Adventure",
+        "Drama"
+      ],
+      "directors": [
+        "Roger Allers",
+        "Rob Minkoff"
+      ],
+      "writers": [
+        "Irene Mecchi",
+        "Jonathan Roberts",
+        "Linda Woolverton"
+      ],
+      "actors": [
+        "Matthew Broderick",
+        "Jeremy Irons",
+        "James Earl Jones"
+      ],
+      "plot": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZGRiZDZhZjItM2M3ZC00Y2IyLTk3Y2MtMWY5YjliNDFkZTJlXkEyXkFqcGc@._V1_SX300.jpg",
+      "metascore": 88,
+      "imdbRating": 8.5
+    }
   }
-]
+}

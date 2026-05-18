@@ -63,6 +63,8 @@ export async function updateMovie (imdbID, movie) {
   if (!response.ok) {
     throw response
   }
+
+  return response
 }
 
 /**

@@ -2,15 +2,18 @@ import * as moviesModel from './movies.model.js'
 
 let genres = []
 
-export function getGenresJson () {
+export function getGenresJson (username) {
   let collectedGenres = []
 
-  const movies = moviesModel.getMoviesJson()
+  const movies = moviesModel.getMoviesJson(username)
 
-  for (const movie of movies) {
-    for (const genre of movie.genres) {
-      if (!collectedGenres.includes(genre)) {
-        collectedGenres.push(genre)
+  for (const movieID in movies) {
+    if (Object.hasOwn(movies, movieID)) {
+      const movie = movies[movieID]
+      for (const genre of movie.genres) {
+        if (!collectedGenres.includes(genre)) {
+          collectedGenres.push(genre)
+        }
       }
     }
   }

@@ -12,7 +12,6 @@ export default {
     'stylelint-high-performance-animation',
     'stylelint-media-use-custom-media',
     'stylelint-no-browser-hacks',
-    'stylelint-no-unresolved-module',
     'stylelint-no-unsupported-browser-features',
     'stylelint-plugin-defensive-css',
     'stylelint-plugin-logical-css',

@@ -7,7 +7,11 @@ import morgan from 'morgan'
 import { config } from './config.js'
 
 import genresRoute from './routes/genres.route.js'
+import loginRoute from './routes/logins.route.js'
+import logoutRoute from './routes/logouts.route.js'
 import moviesRoute from './routes/movies.route.js'
+import searchRoute from './routes/searches.route.js'
+import sessionRoute from './routes/sessions.route.js'
 
 const dirname = path.resolve()
 
@@ -29,6 +33,10 @@ app.use(
 
 app.use('/movies', moviesRoute)
 app.use('/genres', genresRoute)
+app.use('/session', sessionRoute)
+app.use('/login', loginRoute)
+app.use('/logout', logoutRoute)
+app.use('/search', searchRoute)
 
 app.listen(config.port, () => {
   console.log(

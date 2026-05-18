@@ -6,6 +6,7 @@ header {
   z-index: 100;
 }
 
+.subtitle,
 .title {
   /* margin: 0 0 2rem; */
   margin: 0;
@@ -37,11 +38,22 @@ header {
 }
 
 .subtitle {
-  margin: 0 1rem;
+  /* margin-block-start: 1px; */
+  box-shadow:
+    inset 0 -1px 0 hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 hsl(0deg 0% 100% / 50%),
+    inset 0 1px 0 hsl(0deg 0% 0% / 75%),
+    0 1px 0 hsl(0deg 0% 0% / 33.3333%),
+    0 8px 16px hsl(0deg 0% 0% / 25%);
+  filter: brightness(90%);
+  padding: 0.25rem 1rem;
+  text-shadow:
+    0 -1pt 1pt hsl(0deg 0% 100% / 66.6667%),
+    0 1pt 1.5pt hsl(0deg 0% 100% / 50%),
+    0 0 2pt hsl(0deg 0% 100%);
 }
 
-/* stylelint-disable defensive-css/require-pure-selectors */
-footer:not(.movie__button-area) {
+.page-footer:not(.movie__button-area) {
   display: flex;
   position: sticky;
   inset-block-end: 0;
@@ -78,15 +90,16 @@ footer:not(.movie__button-area) {
   font-size: 0.9rem;
 }
 
-footer:not(.movie__button-area) a {
+/* stylelint-disable defensive-css/require-pure-selectors */
+.page-footer:not(.movie__button-area) a {
   color: hsl(200deg 100% 85%);
 }
 
-footer:not(.movie__button-area) a:visited {
+.page-footer:not(.movie__button-area) a:visited {
   color: hsl(256deg 100% 85%);
 }
 
-footer:not(.movie__button-area) p {
+.page-footer:not(.movie__button-area) p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -115,7 +128,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  list-style-type: "";
+  list-style-type: '';
 }
 
 .genre__button {
@@ -164,7 +177,7 @@ main {
   );
   block-size: 50%;
   inline-size: calc(100% - 4px);
-  content: "";
+  content: '';
 }
 
 @media (hover: hover) {
@@ -261,7 +274,7 @@ main {
   );
   padding: 0;
   inline-size: 100%;
-  list-style: "";
+  list-style: '';
 }
 
 .movies__li {
@@ -313,7 +326,7 @@ main {
   flex-wrap: wrap;
   margin: 0.5rem 0;
   padding: 0;
-  list-style: "";
+  list-style: '';
 }
 
 .movie__genre {
@@ -393,7 +406,7 @@ main {
   );
   block-size: 50%;
   inline-size: calc(100% - 4px);
-  content: "";
+  content: '';
 }
 
 @media (hover: hover) {
@@ -467,4 +480,223 @@ main {
   padding: 0;
   text-shadow: inherit;
   color: inherit;
+}
+
+/* .login-required {
+  display: none;
+} */
+/* .hidden {
+  display: none;
+} */
+
+.login-decor {
+  opacity: 0.1;
+  margin-inline-start: 0.5em;
+  font-size: 8vi;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.login-dialog {
+  border: none;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px hsl(0deg 0% 0% / 33.3333%),
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    0 4px 1rem hsl(0deg 0% 0% / 25%);
+  /* stylelint-disable-next-line plugin/use-baseline */
+  backdrop-filter: blur(4px);
+  background: linear-gradient(
+    to bottom,
+    hsl(0deg 0% 95% / 50%),
+    hsl(0deg 0% 75% / 50%),
+    hsl(0deg 0% 85% / 50%)
+  );
+  padding: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.login-form__input {
+  margin-block-end: 1rem;
+  border: none;
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px hsl(0deg 0% 0% / 25%),
+    0 1px 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 4px 0 hsl(0deg 0% 0% / 25%);
+  background: hsl(0deg 0% 100% / 75%);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.login-form__input:focus-visible {
+  box-shadow:
+    0 0 0 1px hsl(0deg 0% 0% / 25%),
+    0 1px 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 4px 0 hsl(0deg 0% 0% / 25%),
+    0 0 8px 4px hsl(200deg 100% 50% / 25%);
+  background: hsl(200deg 100% 99% / 95%);
+}
+
+.login-form__buttonarea {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.login-form__button {
+  position: relative;
+  transition-duration: 1000ms;
+  border: none;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    0 0 0 1px hsl(0deg 0% 0% / 25%),
+    0 2px 4px 0 hsl(0deg 0% 0% / 25%);
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 5%),
+      transparent,
+      hsl(0deg 0% 0% / 5%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(0deg 0% 95%),
+      hsl(0deg 0% 75%),
+      hsl(0deg 0% 80%)
+    );
+  padding: 0.5rem 2rem;
+  text-shadow: 0 -0.5pt 0.25pt hsl(0deg 0% 100% / 50%);
+  color: hsl(0deg 0% 15%);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-form__button::before {
+  display: block;
+  position: absolute;
+  inset-block-start: 2px;
+  inset-inline: 2px;
+  border-radius: 4px;
+  background: radial-gradient(
+    200% 100% at 50% 100%,
+    hsl(0deg 0% 100% / 10%) 40%,
+    hsl(0deg 0% 100% / 80%)
+  );
+  block-size: 50%;
+  inline-size: calc(100% - 4px);
+  content: '';
+}
+
+.login-form__button--default {
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    0 0 0 1px hsl(200deg 50% 25% / 50%),
+    0 2px 4px 0 hsl(200deg 50% 25% / 50%);
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 5%),
+      transparent,
+      hsl(0deg 0% 0% / 5%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(200deg 50% 95%),
+      hsl(200deg 50% 75%),
+      hsl(200deg 50% 80%)
+    );
+}
+
+@media (hover: hover) {
+  .login-form__button:focus-visible,
+  .login-form__button:hover {
+    transition-duration: 50ms;
+    box-shadow:
+      inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+      inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+      inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+      0 0 0 1px hsl(0deg 0% 0% / 25%),
+      0 2px 8px 2px hsl(0deg 0% 100% / 50%),
+      0 2px 4px 0 hsl(0deg 0% 0% / 25%);
+    filter: brightness(110%);
+  }
+
+  .login-form__button--active:hover {
+    transition-duration: 5ms;
+    box-shadow:
+      inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+      inset 0 2px 0 0 hsl(0deg 0% 100% / 5%),
+      inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+      inset 0 2px 8px 2px hsl(0deg 0% 0% / 25%),
+      0 0 0 1px hsl(0deg 0% 0% / 25%);
+    filter: brightness(90%);
+  }
+
+  .login-form__button--default:hover {
+    box-shadow:
+      inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+      inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+      inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+      0 0 0 1px hsl(200deg 100% 25% / 50%),
+      0 2px 8px 2px hsl(200deg 100% 75% / 50%),
+      0 2px 4px 0 hsl(200deg 100% 25% / 50%);
+    background:
+      linear-gradient(
+        to right,
+        hsl(0deg 0% 0% / 5%),
+        transparent,
+        hsl(0deg 0% 0% / 5%)
+      ),
+      linear-gradient(
+        to bottom,
+        hsl(200deg 75% 95%),
+        hsl(200deg 75% 75%),
+        hsl(200deg 75% 80%)
+      );
+  }
+}
+
+.login-form__button:active,
+.login-form__button--active {
+  transition-duration: 5ms;
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 5%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    inset 0 2px 8px 2px hsl(0deg 0% 0% / 25%),
+    0 0 0 1px hsl(0deg 0% 0% / 25%);
+  filter: brightness(90%);
+}
+
+.login-form__button--default:active {
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 5%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    inset 0 2px 8px 2px hsl(0deg 0% 0% / 25%),
+    0 0 0 1px hsl(200deg 100% 25% / 50%);
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 5%),
+      transparent,
+      hsl(0deg 0% 0% / 5%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(200deg 75% 85%),
+      hsl(200deg 75% 65%),
+      hsl(200deg 75% 70%)
+    );
 }

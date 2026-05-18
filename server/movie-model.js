@@ -1,7 +1,7 @@
 const fs = require('node:fs')
 const path = require('node:path')
 
-const moviesFile = path.join(__dirname, 'movies.json')
+const moviesFile = path.join(import.meta.dirname, 'movies.json')
 const movies = JSON.parse(fs.readFileSync(moviesFile, 'utf8'))
 
 function saveMovies () {
@@ -32,7 +32,7 @@ function setUserMovie (username, imdbID, movie) {
 }
 
 function deleteUserMovie (username, imdbID) {
-  if (!movies[username] || !(imdbID in movies[username])) {
+  if (!(movies[username] && imdbID in movies[username])) {
     return false
   }
   delete movies[username][imdbID]

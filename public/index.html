@@ -12,12 +12,16 @@
   <body>
     <header>
       <h1 class="title">Movies</h1>
-      <!-- <p class="subtitle">Have a look at this collection of movies.</p> -->
+      <p class="subtitle" id="status">Please log in to see your collection of movies.</p>
     </header>
     <!-- Filtering should not be in a nav? -->
     <nav>
-      <h2>Filter</h2>
-      <p>Genre:</p>
+      <h2 class="login-required" hidden>Filter</h2>
+      <p class="login-required" hidden>Genre:</p>
+      <h2 class="guest">Manage</h2>
+      <button class="guest genre__button" id="authBtn" type="button">
+        Log In
+      </button>
       <!-- These could probably be radio buttons instead -->
       <ul class="genres" id="genres">
         <!-- <li><button class="genre__button" type="button">All</button></li> -->
@@ -31,11 +35,18 @@
     </nav>
     <main id="app">
       <ul class="movies" id="movies">
-        <li>
+        <!-- <li>
           <section id="server-error">
             <h2>Well, this is embarrasing…</h2>
             <p>The movies could not be loaded. Is the server running?</p>
             <p>Try refreshing the page.</p>
+          </section>
+        </li> -->
+        <li>
+          <section>
+            <h3 class="guest login-decor">
+              Your movies will be visible here once you log in
+            </h3>
           </section>
         </li>
         <!-- <li class="movies__li">
@@ -87,7 +98,7 @@
         </li> -->
       </ul>
     </main>
-    <footer>
+    <footer class="page-footer">
       <p>
         <span>Movies</span>
         •
@@ -124,6 +135,39 @@
         >
       </p>
     </footer>
+
+    <dialog class="login-dialog" id="loginDialog">
+      <form class="login-form" id="loginForm">
+        <label class="login-form__label" for="username">Username:</label>
+        <input
+          class="login-form__input"
+          id="username"
+          name="username"
+          type="text"
+          required
+        >
+        <label class="login-form__label" for="password">Password:</label>
+        <input
+          class="login-form__input"
+          id="password"
+          name="password"
+          type="password"
+          required
+        >
+        <footer class="login-form__buttonarea">
+          <button
+            class="login-form__button login-form__button--default"
+            type="submit"
+          >
+            Login
+          </button>
+          <button class="login-form__button" id="cancelLogin" type="button">
+            Cancel
+          </button>
+        </footer>
+      </form>
+    </dialog>
+
     <script src="/js/pages/index.page.js" type="module"></script>
   </body>
 </html>

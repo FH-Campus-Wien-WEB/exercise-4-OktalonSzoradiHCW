@@ -60,15 +60,20 @@ function getMovie () {
   return movie
 }
 
+const HTTP_OK = 200
+const HTTP_CREATED = 204
+
 function putMovie () {
   const movie = getMovie()
 
   const xhr = new XMLHttpRequest()
   xhr.onload = () => {
-    if (xhr.status === 200 || xhr.status === 204) {
+    if (xhr.status === HTTP_OK || xhr.status === HTTP_CREATED) {
       location.href = 'index.html'
     } else {
-      alert(`Saving of movie data failed. Status code was ${xhr.status}`)
+      console.error(
+        `Saving of movie data failed. Status code was ${xhr.status}`
+      )
     }
   }
 
@@ -79,15 +84,15 @@ function putMovie () {
 }
 
 /** Loading and setting the movie data for the movie with the passed imdbID */
-const imdbID = new URLSearchParams(window.location.search).get('imdbID')
+const imdbID = new URLSearchParams(globalThis.location.search).get('imdbID')
 
 const xhr = new XMLHttpRequest()
 xhr.open('GET', `/movies/${imdbID}`)
 xhr.onload = () => {
-  if (xhr.status === 200) {
+  if (xhr.status === HTTP_OK) {
     setMovie(JSON.parse(xhr.responseText))
   } else {
-    alert(
+    console.error(
       'Loading of movie data failed. Status was ' +
         xhr.status +
         ' - ' +

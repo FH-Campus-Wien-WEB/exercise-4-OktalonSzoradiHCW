@@ -47,8 +47,15 @@ export function makeGenreFilterButton (genre) {
 
     const response = await api.fetchMovies(genre)
 
-    for (const movie of response) {
-      movies.appendChild(createMovieCard(movie))
+    // for (const movie of response) {
+    //   movies.appendChild(createMovieCard(movie))
+    // }
+
+    for (const movieID in response) {
+      if (Object.hasOwn(response, movieID)) {
+        const movie = response[movieID]
+        movies.appendChild(createMovieCard(movie))
+      }
     }
   })
 

@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes'
 import * as model from '../models/movies.model.js'
 
 export function getMovies (req, res) {
+  const { username } = req.session.user
   const { genre } = req.query
 
   let filter = 'all'
@@ -10,15 +11,16 @@ export function getMovies (req, res) {
     filter = genre
   }
 
-  const movies = model.getMoviesJson(filter)
+  const movies = model.getMoviesJson(username, filter)
 
   return res.status(StatusCodes.OK).json(movies)
 }
 
 export async function getMovie (req, res) {
+  const { username } = req.session.user
   const { imdbID } = req.params
 
-  const movie = await model.getMovieJson(imdbID)
+  const movie = await model.getMovieJson(username, imdbID)
 
   if (!movie) {
     res.status(StatusCodes.NOT_FOUND).json('Movie not found.')
@@ -27,11 +29,8 @@ export async function getMovie (req, res) {
   return res.status(StatusCodes.OK).json(movie)
 }
 
-/* Task 3.1 and 3.2.
-- Add a new PUT endpoint
-- Check whether the movie sent by the client already exists
-and continue as described in the assignment */
 export async function editMovie (req, res) {
+  const { username } = req.session.user
   const { imdbID } = req.params
 
   if (!req.body) {
@@ -62,7 +61,7 @@ export async function editMovie (req, res) {
     chalk.blue('\n```')
   )
 
-  const editedMovie = await model.editMovieJson(imdbID, {
+  const editedMovie = await model.editMovieJson(username, imdbID, {
     title,
     released,
     runtime,
